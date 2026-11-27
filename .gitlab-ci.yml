@@ -1,0 +1,9 @@
+stages:
+  - test
+
+mirror_check:
+  stage: test
+  image: alpine:3.22
+  script:
+    - echo "$CI_COMMIT_SHA"
+    - test "$(cat ci-demo.txt)" = "pass"
